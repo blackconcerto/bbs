@@ -1,10 +1,11 @@
 import { AxiosResponse}  from 'axios';
 import fetch from '../utils/fetch';
+const prefix = "bbsApi";
 
 export const userLogin = params => {
   return fetch({
     method: 'post',
-    url: '/api/user/login',
+    url: prefix + '/user/login',
     data: params,
   });
 };
@@ -12,14 +13,14 @@ export const userLogOut = () => {
   return fetch({
     method: 'get',
     useToken: true,
-    url: '/api/user/logout',
+    url: prefix + '/user/logout',
   });
 };
 
 export const userRegister = params => {
   return fetch({
     method: 'post',
-    url: '/api/user/createUser',
+    url: prefix + '/user/createUser',
     data: params,
   });
 };
@@ -27,14 +28,14 @@ export const changePassApi = params => {
   return fetch({
     method: 'post',
     useToken: true,
-    url: '/api/user/changePass',
+    url: prefix + '/user/changePass',
     data: params,
   });
 };
 export const modifyUserApi = params => {
   return fetch({
     method: 'post',
-    url: '/api/user/updateUser',
+    url: prefix + '/user/updateUser',
     data: params,
   });
 };
@@ -42,7 +43,7 @@ export const modifyUserApi = params => {
 export const getUserInfo = params => {
   return fetch({
     method: 'get',
-    url: '/api/user/getUserInfo',
+    url: prefix + '/user/getUserInfo',
     useToken: true,
     params: params,
   });
@@ -51,14 +52,14 @@ export const getUserInfo = params => {
 export const fetchTopicList = params => {
   return fetch({
     method: 'get',
-    url: '/api/topic/getTopicList',
+    url: prefix + '/topic/getTopicList',
     params: params,
   });
 };
 export const updateTopicItem = params => {
   return fetch({
     method: 'get',
-    url: '/topic/updateTopic',
+    url: prefix + '/topic/updateTopic',
     params: params,
   });
 };
@@ -67,7 +68,7 @@ export const createTopic = params => {
   return fetch({
     method: 'post',
     useToken: true,
-    url: '/api/topic/createTopic',
+    url: prefix + '/topic/createTopic',
     data: params,
   });
 };
@@ -75,7 +76,7 @@ export const createTopic = params => {
 export const fetchChannelList = (params:any): Promise<AxiosResponse> => {
   return fetch({
     method: 'get',
-    url: '/api/category/getCategoryList',
+    url: prefix + '/category/getCategoryList',
     params: params,
   });
 };
@@ -83,7 +84,7 @@ export const fetchChannelList = (params:any): Promise<AxiosResponse> => {
 export const fetchCommentList = params => {
   return fetch({
     method: 'get',
-    url: '/api/comment/getCommentList',
+    url: prefix + '/comment/getCommentList',
     params: params,
   });
 };
@@ -92,7 +93,7 @@ export const addComment = params => {
   return fetch({
     method: 'post',
     useToken: true,
-    url: '/api/comment/addComment',
+    url: prefix + '/comment/addComment',
     data: params,
   });
 };
@@ -101,7 +102,7 @@ export const actionPraise = params => {
   return fetch({
     method: 'post',
     useToken: true,
-    url: '/api/praise/praiseAction',
+    url: prefix + '/praise/praiseAction',
     data: params,
   });
 };
@@ -109,7 +110,7 @@ export const actionPraise = params => {
 export const fetchPraiseInfo = params => {
   return fetch({
     method: 'get',
-    url: '/api/praise/getPraiseInfo',
+    url: prefix + '/praise/getPraiseInfo',
     params: params,
   });
 };
@@ -118,7 +119,7 @@ export const actionFavoriteTopic = params => {
   return fetch({
     method: 'post',
     useToken: true,
-    url: '/api/favorite/favoriteAction',
+    url: prefix + '/favorite/favoriteAction',
     data: params,
   });
 };
@@ -127,7 +128,7 @@ export const getFavoriteTopic = params => {
   return fetch({
     method: 'get',
     useToken: true,
-    url: '/api/favorite/getFavoriteList',
+    url: prefix + '/favorite/getFavoriteList',
     params: params,
   });
 };
